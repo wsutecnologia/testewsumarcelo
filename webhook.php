@@ -14,7 +14,7 @@ foreach ($_POST as $key => $value) {
 file_put_contents('/var/www/html/teste/testewsumarcelo/push.log', $data.PHP_EOL, FILE_APPEND);
 
 if ( $_POST['payload'] && $_SERVER['HTTP_X_GITHUB_EVENT'] == 'push') {
-  shell_exec( 'cd /var/www/html/teste/testewsumarcelo/ && git reset --hard HEAD && git pull' );
+  shell_exec( 'cd /var/www/html/teste/testewsumarcelo/ && git reset --hard HEAD && git config core.sshCommand "ssh -i /home/acheiusa/.ssh/id_rsa -F /dev/null" && git pull' );
 }
 
 ?>
