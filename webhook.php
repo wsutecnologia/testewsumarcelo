@@ -1,9 +1,11 @@
 <?php
 
 $event = $_SERVER['HTTP_X_GITHUB_EVENT'];
-file_put_contents('/var/www/html/teste/testewsumarcelo/push.log', $data, FILE_APPEND);
+file_put_contents('/var/www/html/teste/testewsumarcelo/push.log', $event, FILE_APPEND);
 
 #$payload = $_POST['payload'];
+file_put_contents('/var/www/html/teste/testewsumarcelo/push.log', $payload, FILE_APPEND);
+
 #$all = "";
 #foreach ($_POST as $key => $value) {
 #  $all = $key.":".$value.", ";
